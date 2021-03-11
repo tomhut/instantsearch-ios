@@ -19,7 +19,7 @@ public class QueryRuleCustomDataInteractor<Model: Decodable>: ItemInteractor<Mod
 extension QueryRuleCustomDataInteractor {
 
   func extractModel(from searchResponse: SearchResponse) {
-    if let userData = searchResponse.userData,
+    if let userData = searchResponse.rules?.consequence?.renderingContent?.userData ?? searchResponse.userData,
        let model = userData.compactMap({ try? Model(json: $0) }).first {
       item = model
     } else {
