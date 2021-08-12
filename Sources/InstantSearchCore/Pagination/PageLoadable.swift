@@ -14,7 +14,7 @@ public protocol PageLoadable: class {
 
 }
 
-extension SingleIndexSearcher: PageLoadable {
+extension HitsSearcher: PageLoadable {
 
   public func loadPage(atIndex pageIndex: Int) {
     indexQueryState.query.page = pageIndex
