@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol PageLoadable: class {
+public protocol PageLoadable: AnyObject {
 
   func loadPage(atIndex pageIndex: Int)
 
@@ -17,7 +17,7 @@ public protocol PageLoadable: class {
 extension HitsSearcher: PageLoadable {
 
   public func loadPage(atIndex pageIndex: Int) {
-    indexQueryState.query.page = pageIndex
+    request.query.page = pageIndex
     search()
   }
 
