@@ -10,6 +10,7 @@ import InstantSearch
 #if canImport(UIKit)
 import UIKit
 
+@available(*, deprecated, message: "Snippets to remove when MulstIndexSearcher obsoleted")
 class MultiIndexHitsSnippets {
     
   struct Actor: Codable {}
